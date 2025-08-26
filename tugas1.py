@@ -22,16 +22,18 @@ y = y*1000
 
 # harga produksi
 produksi_y= np.linspace(0, 1000, len(x))
-produksi_z = np.linspace(3000, 2000, len(x))  # linearly decreases from 3000 -> 2000 for quantity 0 -> 1000
+produksi_z = np.linspace(3000, 2000, len(x)) + np.random.normal(0, 0.1, size=x.shape)*100
+# linearly decreases from 3000 -> 2000 for quantity 0 -> 1000
 
 # Plot
 plt.figure(figsize=(8,5))
-plt.plot(x, y, color="navy", linewidth=2)
-plt.plot(produksi_z, produksi_y, color="red", linewidth=2)
+plt.plot(x, y, color="navy", label='penjualan', linewidth=2)
+plt.plot(produksi_z, produksi_y, color="red", label='produksi', linewidth=2)
 plt.title("Toko Roti Maknyus")
 plt.xlabel("x (harga)")
-plt.ylabel("y (jumlah barang laku)")
+plt.ylabel("y (jumlah barang dibuat/laku)")
 plt.grid(True)
+plt.legend()
 plt.show()
 
 # tugas:

@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 
 # Number of points
 n = 200
+NPM= 1991
 
 # Generate random x values between 0 and 4π
+np.random.seed(NPM)
 x = np.random.uniform(0, 4*np.pi, n)
 
 # Original function

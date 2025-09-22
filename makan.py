@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+NPM= 19102
+np.random.seed(NPM)
+
 makan =  pd.read_csv("makanan.csv")
 # mohon ditambahkan (lagi) agar lebih beragam
 
@@ -51,7 +54,7 @@ for n in range(0, SAMPLE_NUM):
         #print(f"hari {i} pagi: {makan['makanan'][pilihan]}")    
         resp_pilih[n][2*1]= pilihan
         
-        # makan kedua
+        # makan keduas
         pilihan= np.random.randint(0, len(makan))
         # update weight factor
         w_kenyang= np.random.normal(loc=wkenyang_base, scale=0.2)

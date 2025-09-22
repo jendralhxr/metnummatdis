@@ -81,17 +81,13 @@ for n in range(0, SAMPLE_NUM):
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
-
 Y, X = np.meshgrid(bin_sisa, sampleid)
-
 # Colorize the surface using a colormap
 surf = ax.plot_surface(X, Y, resp_sehat, 
-                       cmap='jet',   # try 'plasma', 'coolwarm', etc.
+                       cmap='jet_r',   # try 'plasma', 'coolwarm', etc.
                        edgecolor='none')
-
-# Add a colorbar to show the scale
 fig.colorbar(surf, ax=ax, shrink=0.5, aspect=10)
-# plot yang ini butuh dipercantik
+# plot yang ini barangkali butuh dipercantik
 
 # TUGAS
 # (1) cari pola makan mana saja yang menghasilkan nilai kumulatif kesehatan (resp_sehat) positif 

@@ -79,10 +79,18 @@ for n in range(0, SAMPLE_NUM):
 # np.corrcoef(skor, sisa)
 # np.histogram(sisa)
 
-fig= plt.figure()
-ax= fig.add_subplot(projection='3d')
-Y, X= np.meshgrid(bin_sisa, sampleid)
-ax.plot_surface(X, Y, resp_sehat)
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+
+Y, X = np.meshgrid(bin_sisa, sampleid)
+
+# Colorize the surface using a colormap
+surf = ax.plot_surface(X, Y, resp_sehat, 
+                       cmap='jet',   # try 'plasma', 'coolwarm', etc.
+                       edgecolor='none')
+
+# Add a colorbar to show the scale
+fig.colorbar(surf, ax=ax, shrink=0.5, aspect=10)
 # plot yang ini butuh dipercantik
 
 # TUGAS

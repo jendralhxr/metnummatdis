@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-NPM= 19102
+NPM= 19102         
 np.random.seed(NPM)
 
 makan =  pd.read_csv("makanan.csv")

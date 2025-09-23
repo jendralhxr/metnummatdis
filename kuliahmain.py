@@ -77,6 +77,6 @@ plt.title("quality of life (khusus sehat)")
 # 4) buat cerita aktivitas harian sesuai, bagaimana agar lebih baik/sehat
 #    poin 4 paling penting
 
-# global optimum
+# global optimum,
 # idx = np.unravel_index(np.argmax(Z_clip), Z_clip.shape)
 # opt_x, opt_y, opt_z = X[idx], Y[idx], Z_clip[idx]

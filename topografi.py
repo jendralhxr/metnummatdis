@@ -1,6 +1,8 @@
 # Tugas pengganti UTS
 # Analisis Numerik (A)
 # untuk dikumpulkan 14 Oktober 2025 12:00 Dhuhur
+# dikumpukan dalam format python source code (*.py) atau python notebook (*.ipynb)
+# wajib diunggah ke github kemudian konfirmasi melalui email ke muhammad_zulhaj.sada@upnjatim.ac.id
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -43,7 +45,7 @@ ax.set_ylabel("Y (km)")
 ax.set_aspect('equal', adjustable='box')
 plt.colorbar(cf, ax=ax, label="elevasi (m)")
 
-# bayangkan peta ini adalah topografi bukit di suatu daerah
+# Bayangkan peta ini adalah topografi bukit di suatu daerah
 # 
 # 1) cari titik tertinggi global  (bobot 10%)
 #   gunakan metode optimasi titik maksimum
@@ -60,7 +62,10 @@ plt.colorbar(cf, ax=ax, label="elevasi (m)")
 #   hitung dengan integral untuk sisi atas dan sisi bawah
 # 4b) berapa ketinggian akhir tanah yang rata tersebut?
 #
-# bonus (15%)
+# Bonus (15%)
 #   pembahasan/diskusi yang kritis atau visualisasi yang ciamik (fancy, padat informasi, tapi tidak menyesatkan)
 #   pengerjaan yang gercep (2 poin per hari lebih cepat dari 14 Oktober, penalti 2% per hari sejak 15 Oktober jika terlambat)
-
+# 
+# Sanksi
+# mahasiswa yang terindikasi saling mencontek akan disyaratkan untuk mencantumkan prompt/diskusi dengan LLM (ChatGPT, Gemini, Claude, dlsb) sebagai bukti tidak saling mencontek. 
+# Kalau ketahuan memang saling mencontek, nilai terendah dari gerombolan tersebut atau nilai tertinggi – 15 akan diberikan, whichever lowest.

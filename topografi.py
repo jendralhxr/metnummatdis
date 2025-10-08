@@ -1,6 +1,6 @@
 # Tugas pengganti UTS
 # Analisis Numerik (A)
-# untuk dikumpulkan 14 Oktober 2025
+# untuk dikumpulkan 14 Oktober 2025 12:00 Dhuhur
 
 import numpy as np
 import matplotlib.pyplot as plt

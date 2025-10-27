@@ -84,6 +84,15 @@ makanbareng = []
 # 3a) bridge person. nx.betweenness_centrality(G)
 # 3b) cari bridge person dengan koneksi paling sedikit 
 
+########### tambahan dari prodi #####
+SURVEI KEPUASAN TENGAH SEMESTER! 📣
+
+Kepada seluruh Mahasiswa/i Program Studi Sains Data UPN "Veteran" Jawa Timur,
+Kami mengundang partisipasi Anda dalam Survei Kepuasan Tengah Semester Ganjil 2025/2026. 📝
+Tujuan survei ini adalah mengevaluasi kualitas proses pembelajaran (8 minggu berjalan) sebagai bahan perbaikan berkelanjutan (continuous improvement) dan penjaminan mutu prodi. 🚀
+
+Partisipasi bersifat anonim dan suara Anda sangat penting! Mohon berikan jawaban jujur dengan skala penilaian 1–5. ⭐
+Isi survei sekarang: ➡️ bit.ly/SETPP2526
 
 
 

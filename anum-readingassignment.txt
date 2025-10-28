@@ -1,4 +1,4 @@
-Numerical Analysis With Python
+First Semester in Numerical Analysis with Python
 https://people.hsc.edu/faculty-staff/blins/books/NumericalAnalysisWithPython.pdf
 Chapter 2: Solutions of equations: Root-finding
 Chapter 3: Interpolation
@@ -14,11 +14,6 @@ Chapter 20-21: Numerical Differentiation + Numerical Integration
 Chapter 22: Ordinary Differential Equation-Initial Value Problem
 Chapter 23: Ordinary Differential Equation-Boundary Value Problem
 Chapter 24: Fourier Transform
-
-First Semester in Numerical Analysis with Python
-https://open.umn.edu/opentextbooks/textbooks/first-semester-in-numerical-analysis-with-python
-Chapter 4: Numerical Quadrature and Differentiation
-Chapter 5: Approximation Theory
 
 Tea Time Numerical Analysis
 https://open.umn.edu/opentextbooks/textbooks/741
@@ -39,10 +34,21 @@ Chapter 6: The numerical solution of minimization problems
 buat presentasi (kelompok) dari chapter pilihan, dengan kriteria:
 - presentasi tidak kurang dari 16 dan lebih dari 24 slide materi utama
 (boleh ada sub-bahasan yang dikurangi/dilewati jika diperlukan/kelewat pusing)
-+ slide berbahasa Inggris dan presentasi berbahasa Indonesia, atau
-+ slide berbahasa Indonesia dan presentasi menggunakan Bahasa Inggris
-- durasi presentasi ~15 menit + 5 menit tanya jawab
+= durasi presentasi ~15 menit + 5 menit tanya jawab
+= slide berbahasa Inggris dan presentasi berbahasa Indonesia, atau
+= slide berbahasa Indonesia dan presentasi menggunakan Bahasa Inggris
 - di tiap slide tidak lebih dari 24 kata (termasuk caption), font minimal 18
 + jika terdapat kutipan bahasa pemrograman, gunakan/terjemahkan ke python
  (jika tidak ada, dapat ditambahkan sebagai contoh ilustrasi)
 + penilaian utama ada di 'sampainya ide/pokok bahasan'
+= export ke PPTX/ODP/PDF, upload ke github
+
+----------------- tambahan dari prodi -----------
+SURVEI KEPUASAN TENGAH SEMESTER! 📣
+
+Kepada seluruh Mahasiswa/i Program Studi Sains Data UPN "Veteran" Jawa Timur,
+Kami mengundang partisipasi Anda dalam Survei Kepuasan Tengah Semester Ganjil 2025/2026. 📝
+Tujuan survei ini adalah mengevaluasi kualitas proses pembelajaran (8 minggu berjalan) sebagai bahan perbaikan berkelanjutan (continuous improvement) dan penjaminan mutu prodi. 🚀
+
+Partisipasi bersifat anonim dan suara Anda sangat penting! Mohon berikan jawaban jujur dengan skala penilaian 1–5. ⭐
+Isi survei sekarang: ➡️ bit.ly/SETPP2526

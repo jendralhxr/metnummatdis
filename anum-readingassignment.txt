@@ -1,0 +1,43 @@
+Numerical Analysis With Python
+https://people.hsc.edu/faculty-staff/blins/books/NumericalAnalysisWithPython.pdf
+Chapter 2: Solutions of equations: Root-finding
+Chapter 3: Interpolation
+Chapter 4: Numerical Quadrature and Differentiation
+Chapter 5: Approximation Theory
+
+Python Programming and Numerical Methods
+https://pythonnumericalmethods.studentorg.berkeley.edu/
+Chapter 14: Linear Algebra and Systems of Linear Equations
+Chapter 15: Eigenvalues and Eigenvectors
+Chapter 16-17: Least Square Regression + Interpolation
+Chapter 20-21: Numerical Differentiation + Numerical Integration
+Chapter 22: Ordinary Differential Equation-Initial Value Problem
+Chapter 23: Ordinary Differential Equation-Boundary Value Problem
+Chapter 24: Fourier Transform
+
+Tea Time Numerical Analysis
+https://open.umn.edu/opentextbooks/textbooks/741
+Chapter 4: Numerical Calculus
+Chapter 6: Ordinary Differential Equations
+
+Introduction to Numerical Analysis
+https://zhilin.math.ncsu.edu/TEACHING/MA580/Stoer_Bulirsch.pdf
+Chapter 1: Error Analysis
+Chapter 4: System of Linear Equations
+Chapter 5: Finding Zeros and Minimum Points by Interative Methods
+
+Numerical methods in Scientific Computing
+https://open.umn.edu/opentextbooks/textbooks/numerical-methods-in-scientific-computing
+Chapter 3: Finite difference methods
+Chapter 6: The numerical solution of minimization problems
+
+buat presentasi (kelompok) dari chapter pilihan, dengan kriteria:
+- presentasi tidak lebih dari 22 slide
+(boleh ada sub-bahasan yang dikurangi/dilewati jika diperlukan/kelewat pusing)
+- slide berbahasa Inggris dan presentasi berbahasa Indonesia, atau
+- slide berbahasa Indonesia dan presentasi menggunakan Bahasa Inggris
+- durasi presentasi ~15 menit + 5 menit tanya jawab
+- di tiap slide tidak lebih dari 24 kata, font minimal 18
+- jika terdapat kutipan bahasa pemrograman, gunakan/terjemahkan ke python
+ (jika tidak ada, dapat ditambahkan sebagai contoh ilustrasi)
+- penilaian utama ada di 'sampainya ide/pokok bahasan'

@@ -1276,3 +1276,246 @@ print(f"""
 """)
 
 G11= G.copy()
+
+#####
+# carissa, auliya, erik
+
+G = nx.Graph()
+
+# Daftar mahasiswa
+mahasiswa = [
+    "Madina", "Maria", "Adinda", "Aquina", "Alimun", "Hizkia", "Raveena",
+    "Ophyng", "Aisyah", "Febriani", "Amelia", "Via", "Fanny", "Naia",
+    "Alfani", "Diah", "Kenzy", "Angel", "Maulida", "Izzati", "Auliya",
+    "Carissa", "Diva", "Erik", "Maya", "Dany", "Gendis", "Wildan", "Esthi",
+    "Naufal", "Laudya", "Adrian", "Selvy", "Hafiyyan", "Indra", "Yuniar",
+    "Kiky", "Sofia", "Varid", "Gaitsa"
+]
+G.add_nodes_from(mahasiswa)
+
+# Koneksi kelompok tugas
+sekelompok = [
+    ("Raveena", "Amelia"), ("Raveena", "Yuniar"), ("Yuniar", "Amelia"),
+    ("Hizkia", "Maria"), ("Hizkia", "Sofia"), ("Sofia", "Maria"),
+    ("Naufal", "Laudya"), ("Naufal", "Febriani"), ("Febriani", "Laudya"),
+    ("Kenzy", "Wildan"), ("Wildan", "Hafiyyan"), ("Kenzy", "Hafiyyan"),
+    ("Alimun", "Dany"), ("Dany", "Indra"), ("Indra", "Alimun"),
+    ("Esthi", "Kiky"), ("Kiky", "Selvy"), ("Selvy", "Esthi"),
+    ("Adrian", "Izzati"), ("Izzati", "Fanny"), ("Fanny", "Adrian"),
+    ("Aquina", "Diva"), ("Diva", "Maya"), ("Maya", "Aquina"),
+    ("Diah", "Gendis"), ("Gendis", "Angel"), ("Angel", "Diah"),
+    ("Ophyng", "Aisyah"), ("Aisyah", "Naia"), ("Naia", "Ophyng"),
+    ("Adinda", "Varid"), ("Varid", "Gaitsa"), ("Gaitsa", "Adinda"),
+    ("Auliya", "Carissa"), ("Carissa", "Erik"), ("Erik", "Auliya"),
+    ("Madina", "Via"), ("Maulida", "Madina"), ("Via", "Alfani"),
+    ("Madina", "Alfani"), ("Maulida", "Via"), ("Maulida", "Alfani")
+]
+G.add_edges_from(sekelompok, color='black')
+
+# Klaster pertemanan (setiap klaster warna berbeda)
+akamsi = ["Yuniar", "Via", "Raveena", "Kenzy", "Esthi", "Alimun", "Amelia", "Indra", "Madina", "Maulida", "Kiky"]
+jabodetabek = ["Sofia", "Maria", "Fanny", "Gaitsa", "Aisyah"]
+platP = ["Angel", "Yuniar", "Diah", "Gendis"]
+platS = ["Naia", "Izzati", "Aisyah", "Sofia"]
+platM = ["Dany", "Alimun", "Indra", "Wildan"]
+platN = ["Amelia", "Alfani", "Via", "Madina"]
+platAx = ["Adrian", "Raveena", "Selvy", "Fanny"]
+sekos = ["Aisyah", "Naia"]
+himasada = ["Dany", "Amelia", "Yuniar", "Kiky", "Esthi", "Raveena", "Naia", "Wildan", "Selvy", "Via", "Madina", "Alfani", "Maulida"]
+BEMfakultas = ["Indra", "Hafiyyan", "Varid", "Carissa", "Raveena"]
+warkopbening = ["Raveena", "Yuniar", "Wildan", "Dany", "Maulida", "Izzati"]
+skincaredanmakeup = ["Hizkia", "Kiky", "Yuniar", "Raveena", "Sofia", "Amelia"]
+makanbareng = ["Raveena", "Amelia", "Wildan", "Madina", "Alfani"]
+main_roblox = ["Adinda", "Diva", "Maya", "Kenzy", "Angel", "Varid"]
+
+# Fungsi membuat koneksi antar anggota klaster
+def buat_klaster(graph, anggota, warna):
+    for i in range(len(anggota)):
+        for j in range(i + 1, len(anggota)):
+            graph.add_edge(anggota[i], anggota[j], color=warna)
+
+# Tambahkan semua klaster dengan warna berbeda
+cluster_list = {
+    "blue": akamsi, "orange": jabodetabek, "red": platP, "magenta": platS,
+    "green": platM, "cyan": platN, "lime": platAx, "yellow": sekos,
+    "purple": himasada, "brown": BEMfakultas, "gray": warkopbening,
+    "pink": skincaredanmakeup, "teal": makanbareng, "gold": main_roblox
+}
+
+for color, anggota in cluster_list.items():
+    buat_klaster(G, anggota, color)
+    
+G12 =  G.copy()
+
+
+####
+# Asruz, Laudya, Febriani
+
+G = nx.Graph()
+
+mahasiswa = [
+"Madina", "Maria", "Adinda", "Aquina", "Alimun", "Hizkia", "Raveena",
+"Ophyng", "Aisyah", "Febriani", "Amelia", "Via", "Fanny", "Naia",
+"Alfani", "Diah", "Kenzy", "Angel", "Maulida", "Izzati", "Auliya",
+"Carissa", "Diva", "Erik", "Maya", "Dany", "Gendis", "Wildan", "Esthi",
+"Naufal", "Laudya", "Adrian", "Selvy", "Hafiyyan", "Indra", "Yuniar",
+"Kiky", "Sofia", "Varid", "Gaitsa"
+]
+
+G.add_nodes_from(mahasiswa)
+
+# ===== grup awal (sekelompok)
+sekelompok = [
+        ("Raveena", "Amelia"), ("Raveena", "Yuniar"), ("Yuniar", "Amelia"),
+        ("Hizkia", "Maria"), ("Hizkia", "Sofia"), ("Sofia", "Maria"),
+        ("Naufal", "Laudya"), ("Naufal", "Febriani"), ("Febriani", "Laudya"),
+        ("Kenzy", "Wildan"), ("Wildan", "Hafiyyan"), ("Kenzy", "Hafiyyan"),
+        ("Alimun", "Dany"), ("Dany", "Indra"), ("Indra", "Alimun"),
+        ("Esthi", "Kiky"), ("Kiky", "Selvy"), ("Selvy", "Esthi"),
+        ("Adrian", "Izzati"), ("Izzati", "Fanny"), ("Fanny", "Adrian"),
+        ("Aquina", "Diva"), ("Diva", "Maya"), ("Maya", "Aquina"),
+        ("Diah", "Gendis"), ("Gendis", "Angel"), ("Angel", "Diah"),
+        ("Ophyng", "Aisyah"), ("Aisyah", "Naia"), ("Naia", "Ophyng"),
+        ("Adinda", "Varid"), ("Varid", "Gaitsa"), ("Gaitsa", "Adinda"),
+        ("Auliya", "Carissa"), ("Carissa", "Erik"), ("Erik", "Auliya"),
+        ("Madina", "Via"), ("Maulida", "Madina"), ("Via", "Alfani"),
+        ("Madina", "Alfani"), ("Maulida", "Via"), ("Maulida", "Alfani")
+]
+G.add_edges_from(sekelompok, color='red')
+
+# =========================================
+# 2) CLUSTER LIST
+# =========================================
+
+akamsi = ["Yuniar", "Via", "Kenzy", "Esthi", "Amelia",
+          "Indra", "Madina", "Maulida", "Kiky", "Naufal", "Wildan"]
+
+jabodetabek = ["Sofia", "Maria", "Fanny", "Gaitsa", "Aisyah"]
+platP = ["Angel", "Yuniar"]
+platS = ["Naia", "Izzati"]
+platM = ["Dany", "Alimun"]
+platN = ["Amelia", "Alfani"]
+platAG = ["Adrian", "Raveena", "Selvy", "Fanny"]
+platBK = ["Laudya"]
+platBM = ["Febriani"]
+
+sekos = ["Laudya", "Febriani"]
+
+himasada = ["Dany", "Esthi", "Via", "Madina", "Alfani", "Maulida", "Febriani"]
+
+BEMfakultas = ["Indra", "Hafiyyan", "Varid", "Carissa"]
+
+Mau = ["Naufal", "Laudya", "Febriani", "Ophyng", "Varid", "Hizkia", "Sofia", "Wildan", "Maria"]
+
+skincaredanmakeup = ["Hizkia", "Kiky", "Yuniar", "Raveena", "Sofia", "Amelia"]
+
+makanbareng = ["Naufal", "Laudya", "Febriani", "Ophyng", "Varid", "Hizkia", "Sofia", "Wildan", "Maria"]
+
+seringmain = ["Naufal", "Laudya", "Febriani", "Ophyng", "Varid", "Wildan", "Dany", "Kenzy", "Indra",
+              "Hafiyyan", "Alfani", "Sofia", "Maria", "Hizkia", "Raveena"]
+
+ngobrol = ["Naufal", "Laudya", "Febriani", "Ophyng", "Wildan", "Alimun", "Kenzy", "Varid", "Indra", "Hafiyyan",
+         "Erik", "Adrian", "Alfani"]
+
+maingame = ["Naufal", "Wildan"]
+
+
+cluster_dict = {
+    "akamsi": akamsi,
+    "jabodetabek": jabodetabek,
+    "platP": platP,
+    "platS": platS,
+    "platM": platM,
+    "platN": platN,
+    "platAG": platAG,
+    "platBK": platBK,
+    "platBM": platBM,
+    "sekos": sekos,
+    "himasada": himasada,
+    "BEMfakultas": BEMfakultas,
+    "Mau": Mau,
+    "skincaredanmakeup": skincaredanmakeup,
+    "makanbareng": makanbareng,
+    "seringmain": seringmain,
+    "ngobrol": ngobrol,
+    "maingame": maingame
+}
+
+
+# =========================================
+# 3) AUTO-TAMBAH EDGE DI DALAM CLUSTER
+# =========================================
+def connect_cluster_members(G, cluster_dict):
+    for cname, members in cluster_dict.items():
+        if len(members) <= 1:
+            continue
+
+        for i in range(len(members)-1):
+            G.add_edge(members[i], members[i+1], color="blue")
+
+    return G
+
+G = connect_cluster_members(G, cluster_dict)
+
+
+
+# Koneksi kelompok tugas
+sekelompok = [
+    ("Raveena", "Amelia"), ("Raveena", "Yuniar"), ("Yuniar", "Amelia"),
+    ("Hizkia", "Maria"), ("Hizkia", "Sofia"), ("Sofia", "Maria"),
+    ("Naufal", "Laudya"), ("Naufal", "Febriani"), ("Febriani", "Laudya"),
+    ("Kenzy", "Wildan"), ("Wildan", "Hafiyyan"), ("Kenzy", "Hafiyyan"),
+    ("Alimun", "Dany"), ("Dany", "Indra"), ("Indra", "Alimun"),
+    ("Esthi", "Kiky"), ("Kiky", "Selvy"), ("Selvy", "Esthi"),
+    ("Adrian", "Izzati"), ("Izzati", "Fanny"), ("Fanny", "Adrian"),
+    ("Aquina", "Diva"), ("Diva", "Maya"), ("Maya", "Aquina"),
+    ("Diah", "Gendis"), ("Gendis", "Angel"), ("Angel", "Diah"),
+    ("Ophyng", "Aisyah"), ("Aisyah", "Naia"), ("Naia", "Ophyng"),
+    ("Adinda", "Varid"), ("Varid", "Gaitsa"), ("Gaitsa", "Adinda"),
+    ("Auliya", "Carissa"), ("Carissa", "Erik"), ("Erik", "Auliya"),
+    ("Madina", "Via"), ("Maulida", "Madina"), ("Via", "Alfani"),
+    ("Madina", "Alfani"), ("Maulida", "Via"), ("Maulida", "Alfani")
+]
+G.add_edges_from(sekelompok, color='black')
+
+# Klaster pertemanan (setiap klaster warna berbeda)
+akamsi = ["Yuniar", "Via", "Raveena", "Kenzy", "Esthi", "Alimun", "Amelia", "Indra", "Madina", "Maulida", "Kiky"]
+jabodetabek = ["Sofia", "Maria", "Fanny", "Gaitsa", "Aisyah"]
+platP = ["Angel", "Yuniar", "Diah", "Gendis"]
+platS = ["Naia", "Izzati", "Aisyah", "Sofia"]
+platM = ["Dany", "Alimun", "Indra", "Wildan"]
+platN = ["Amelia", "Alfani", "Via", "Madina"]
+platAx = ["Adrian", "Raveena", "Selvy", "Fanny"]
+sekos = ["Aisyah", "Naia"]
+himasada = ["Dany", "Amelia", "Yuniar", "Kiky", "Esthi", "Raveena", "Naia", "Wildan", "Selvy", "Via", "Madina", "Alfani", "Maulida"]
+BEMfakultas = ["Indra", "Hafiyyan", "Varid", "Carissa", "Raveena"]
+warkopbening = ["Raveena", "Yuniar", "Wildan", "Dany", "Maulida", "Izzati"]
+skincaredanmakeup = ["Hizkia", "Kiky", "Yuniar", "Raveena", "Sofia", "Amelia"]
+makanbareng = ["Raveena", "Amelia", "Wildan", "Madina", "Alfani"]
+main_roblox = ["Adinda", "Diva", "Maya", "Kenzy", "Angel", "Varid"]
+
+# Fungsi membuat koneksi antar anggota klaster
+def buat_klaster(graph, anggota, warna):
+    for i in range(len(anggota)):
+        for j in range(i + 1, len(anggota)):
+            graph.add_edge(anggota[i], anggota[j], color=warna)
+
+# Tambahkan semua klaster dengan warna berbeda
+cluster_list = {
+    "blue": akamsi, "orange": jabodetabek, "red": platP, "magenta": platS,
+    "green": platM, "cyan": platN, "lime": platAx, "yellow": sekos,
+    "purple": himasada, "brown": BEMfakultas, "gray": warkopbening,
+    "pink": skincaredanmakeup, "teal": makanbareng, "gold": main_roblox
+}
+
+for color, anggota in cluster_list.items():
+    buat_klaster(G, anggota, color)
+
+G13 = G.copy()
+
+
+#### all the aggregate
+G = [G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11, G12, G13]
+
+for i, graph in enumerate(G, start=1):
+    print(f"Graph {i}: {graph.number_of_nodes()} nodes, {graph.number_of_edges()} edges")

@@ -1619,4 +1619,40 @@ def draw_graph_edgeweight(
 
     plt.title("Graph with Edge Widths ∝ Weights (Degree-Centered Layout)")
     plt.axis("off")
-    plt.show()
+    
+
+    # degree centrality    
+    degree_dict = dict(G_agg.degree())
+    sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
+    for node, deg in sorted_degree[:10]:
+        print(f"  {node}: degree = {deg}") 
+    
+    for node, deg in sorted_degree[-5:]:
+        print(f"  {node}: degree = {deg}") 
+    
+    # 
+    G= G_agg
+    least_connected_nodes = [n for n, _ in sorted_degree[-2:]]
+
+    all_nodes = set(G.nodes())
+
+    for node in least_connected_nodes:
+        connected = set(G.neighbors(node))
+        not_connected = all_nodes - connected - {node}
+
+        print(f"\{node} belum kenal sama:")
+        if not_connected:
+            print("  " + ", ".join(map(str, not_connected)))
+    
+    
+    # connected weight
+    weight_sum = {}
+    for node in G_agg.nodes():
+        total_weight = sum(data.get('weight', 1) for _, _, data in G_agg.edges(node, data=True))
+        weight_sum[node] = total_weight
+    sorted_weight = sorted(weight_sum.items(), key=lambda x: x[1], reverse=True)
+    for node, deg in sorted_weight[:10]:
+        print(f"  Node {node}: weight = {deg}") 
+
+        
+    

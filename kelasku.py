@@ -160,7 +160,7 @@ BEMfakultas = ["Hafiyyan", "Varid", "Carissa", "Raveena", "Wildan"]
 warkopbening = ["Wildan", "Dany", "Izzati", "Erik", "Hafiyyan", "Diah", "Kenzy"]
 skincaredanmakeup = ["Hizkia", "Kiky", "Sofia", "Maria", "Yuniar"]
 makanbareng = ["Ophyng", "Varid", "Gaitsa", "Carissa", "Diva", "Aquina", "Sofia"]
-nontonfilm = ["Febriani", "laudya", "Naufal", "Adinda", "Auliya", "Gendis", "Maya", "Adrian"]
+nontonfilm = ["Febriani", "Laudya", "Naufal", "Adinda", "Auliya", "Gendis", "Maya", "Adrian"]
 UKM = ["Maria", "Ophyng"]
 kerja = ["Varid", "Wildan"]
 Panitia = ["Ophyng", "Maria", "Hizkia", "Sofia", "Via", "Esthi", "Carissa", "Madina", "Varid", "Maulida", "Naufal",
@@ -1519,3 +1519,104 @@ G = [G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11, G12, G13]
 
 for i, graph in enumerate(G, start=1):
     print(f"Graph {i}: {graph.number_of_nodes()} nodes, {graph.number_of_edges()} edges")
+
+G_agg = nx.Graph()
+
+# Aggregate edges
+for g in G:
+    for u, v, data in g.edges(data=True):
+        w = data.get('weight', 1)  # default weight = 1 if not present
+        if G_agg.has_edge(u, v):
+            G_agg[u][v]['weight'] += w
+        else:
+            G_agg.add_edge(u, v, weight=w)
+
+# (Optional) aggregate node attributes if needed
+for g in G:
+    for n, data in g.nodes(data=True):
+        if n not in G_agg:
+            G_agg.add_node(n, **data)
+            
+            
+def draw_graph_edgeweight(
+    G, scale=1, base_width=0.5,
+    node_color="skyblue", edge_color="teal",
+    show_labels=True
+):
+    """
+    Draw a NetworkX graph with edge linewidths proportional to edge weights.
+    Node positions are arranged by degree (higher-degree nodes toward center).
+
+    Parameters
+    ----------
+    G : networkx.Graph
+        The input graph (should have 'weight' attributes on edges).
+    scale : float, optional
+        Scale factor for edge width range (default=4).
+    base_width : float, optional
+        Minimum line width (default=2).
+    node_color : str or list, optional
+        Color of nodes.
+    edge_color : str or list, optional
+        Color of edges.
+    show_labels : bool, optional
+        Whether to display node labels (default=True).
+    """
+
+    if G.number_of_edges() == 0:
+        print("Graph has no edges.")
+        return
+
+    # --- Sort nodes by degree ---
+    degrees = dict(G.degree())
+    sorted_nodes = sorted(degrees, key=degrees.get, reverse=True)
+    n = len(sorted_nodes)
+
+    # --- Arrange nodes by degree (concentric rings) ---
+    pos = {}
+    center = (0.0, 0.0)
+    num_rings = max(1, int(math.sqrt(n)))
+    ring_spacing = 1.5  # distance between rings
+    ring_nodes = [[] for _ in range(num_rings)]
+
+    # Assign top-degree node(s) to center
+    pos[sorted_nodes[0]] = center
+
+    # Distribute others to rings outward
+    for i, node in enumerate(sorted_nodes[1:], start=1):
+        ring_index = int((i / n) * (num_rings - 1))
+        ring_nodes[ring_index].append(node)
+
+    # Place each ring's nodes evenly in a circle
+    for r_index, nodes in enumerate(ring_nodes):
+        if not nodes:
+            continue
+        radius = (r_index + 1) * ring_spacing
+        for j, node in enumerate(nodes):
+            angle = 2 * math.pi * j / len(nodes)
+            pos[node] = (
+                center[0] + radius * math.cos(angle),
+                center[1] + radius * math.sin(angle)
+            )
+
+    # --- Edge width scaling ---
+    weights = [G[u][v].get('weight', 1) for u, v in G.edges()]
+    max_w = max(weights) if weights else 1
+    edge_widths = [base_width + scale * (w / max_w) for w in weights]
+
+    # --- Draw ---
+    plt.figure(figsize=(8, 6))
+    nx.draw_networkx_nodes(G, pos, node_color=node_color, node_size=600, edgecolors="black")
+    nx.draw_networkx_edges(G, pos, width=edge_widths, edge_color=edge_color)
+    if show_labels:
+        nx.draw_networkx_labels(G, pos, font_size=10, font_weight="bold")
+
+    nx.draw_networkx_edge_labels(
+        G, pos,
+        edge_labels={(u, v): f"{d['weight']:.1f}" for u, v, d in G.edges(data=True)},
+        font_color="gray"
+    )
+
+    plt.title("Graph with Edge Widths ∝ Weights (Degree-Centered Layout)")
+    plt.axis("off")
+    plt.show()

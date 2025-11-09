@@ -1655,4 +1655,4 @@ def draw_graph_edgeweight(
         print(f"  Node {node}: weight = {deg}") 
 
         
-    
+G.nodes() - G.neighbors("Raveena")

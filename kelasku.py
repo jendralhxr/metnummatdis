@@ -202,7 +202,7 @@ G = nx.Graph()
 def buat_koneksi_klaster(graph, anggota_list, warna_edge):
     """
     Fungsi untuk membuat koneksi pertemanan secara iteratif untuk anggota klaster
-    Semua anggota dalam klaster akan saling terhubung (complete graph)
+    Semua anggota dalam klaster akan saog terhubung (complete graph)
 
     Parameters:
     - graph: Graf NetworkX
@@ -1513,31 +1513,7 @@ for color, anggota in cluster_list.items():
 
 G13 = G.copy()
 
-
-#### all the aggregate
-G = [G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11, G12, G13]
-
-for i, graph in enumerate(G, start=1):
-    print(f"Graph {i}: {graph.number_of_nodes()} nodes, {graph.number_of_edges()} edges")
-
-G_agg = nx.Graph()
-
-# Aggregate edges
-for g in G:
-    for u, v, data in g.edges(data=True):
-        w = data.get('weight', 1)  # default weight = 1 if not present
-        if G_agg.has_edge(u, v):
-            G_agg[u][v]['weight'] += w
-        else:
-            G_agg.add_edge(u, v, weight=w)
-
-# (Optional) aggregate node attributes if needed
-for g in G:
-    for n, data in g.nodes(data=True):
-        if n not in G_agg:
-            G_agg.add_node(n, **data)
-            
-            
+           
 def draw_graph_edgeweight(
     G, scale=1, base_width=0.5,
     node_color="skyblue", edge_color="teal",
@@ -1619,40 +1595,80 @@ def draw_graph_edgeweight(
 
     plt.title("Graph with Edge Widths ∝ Weights (Degree-Centered Layout)")
     plt.axis("off")
-    
 
-    # degree centrality    
-    degree_dict = dict(G_agg.degree())
-    sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
-    for node, deg in sorted_degree[:10]:
-        print(f"  {node}: degree = {deg}") 
-    
-    for node, deg in sorted_degree[-5:]:
-        print(f"  {node}: degree = {deg}") 
-    
-    # 
-    G= G_agg
-    least_connected_nodes = [n for n, _ in sorted_degree[-2:]]
 
-    all_nodes = set(G.nodes())
+#### all the aggregate
+G = [G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11, G12, G13]
 
-    for node in least_connected_nodes:
-        connected = set(G.neighbors(node))
-        not_connected = all_nodes - connected - {node}
+for i, graph in enumerate(G, start=1):
+    print(f"Graph {i}: {graph.number_of_nodes()} nodes, {graph.number_of_edges()} edges")
 
-        print(f"\{node} belum kenal sama:")
-        if not_connected:
-            print("  " + ", ".join(map(str, not_connected)))
-    
-    
-    # connected weight
-    weight_sum = {}
-    for node in G_agg.nodes():
-        total_weight = sum(data.get('weight', 1) for _, _, data in G_agg.edges(node, data=True))
-        weight_sum[node] = total_weight
-    sorted_weight = sorted(weight_sum.items(), key=lambda x: x[1], reverse=True)
-    for node, deg in sorted_weight[:10]:
-        print(f"  Node {node}: weight = {deg}") 
+G_agg = nx.Graph()
 
+# Aggregate edges
+for g in G:
+    for u, v, data in g.edges(data=True):
+        w = data.get('weight', 1)  # default weight = 1 if not present
+        if G_agg.has_edge(u, v):
+            G_agg[u][v]['weight'] += w
+        else:
+            G_agg.add_edge(u, v, weight=w)
+
+# (Optional) aggregate node attributes if needed
+for g in G:
+    for n, data in g.nodes(data=True):
+        if n not in G_agg:
+            G_agg.add_node(n, **data)
+             
+
+# degree centrality    
+degree_dict = dict(G_agg.degree())
+sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
+
+for node, deg in sorted_degree[:10]:
+    print(f"  {node}: degree = {deg}") 
+
+for node, deg in sorted_degree[-5:]:
+    print(f"  {node}: degree = {deg}") 
+
+# 
+G= G_agg
+least_connected_nodes = [n for n, _ in sorted_degree[-2:]]
+
+all_nodes = set(G.nodes())
+
+for node in least_connected_nodes:
+    connected = set(G.neighbors(node))
+    not_connected = all_nodes - connected - {node}
+
+    print(f"\{node} belum kenal sama:")
+    if not_connected:
+        print("  " + ", ".join(map(str, not_connected)))
+
+
+# connected weight
+weight_sum = {}
+for node in G_agg.nodes():
+    total_weight = sum(data.get('weight', 1) for _, _, data in G_agg.edges(node, data=True))
+    weight_sum[node] = total_weight
+sorted_weight = sorted(weight_sum.items(), key=lambda x: x[1], reverse=True)
+for node, deg in sorted_weight[:10]:
+    print(f"  {node}: weight = {deg}")
+
+sorted_weight = dict(sorted(weight_sum.items(), key=lambda x: x[1], reverse=True))
+
+
+import seaborn as sns
+
+plt.figure(figsize=(14, 6))
+sns.barplot(x=list(sorted_weight.keys()), y=list(sorted_weight.values()), palette="viridis")
+plt.xticks(rotation=75, ha='right')
+plt.title("Jumlah Koneksi Setiap Anak dalam Jaringan Pertemanan", fontsize=14, pad=15)
+plt.xlabel("Nama Anak")
+plt.ylabel("Jumlah Koneksi")
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
         
 G.nodes() - G.neighbors("Raveena")
+G.add_edge("Raveena","")

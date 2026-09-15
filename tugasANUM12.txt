@@ -1,0 +1,22 @@
+Deskripsi Tugas Analisis Numerik:
+- regresi
+- pencarian akar
+
+Berikut ada lima gerai donat dengan strategi marketing yang berbeda:
+- Gerai A (Premium Gourmet): Harga Tinggi, Niche Terbatas, Kafe Specialty
+- Gerai B (Mass Market Volume): Harga Murah, Margin Tertekan Inflasi Bahan
+- Gerai C (Promo Agresif): Diskon Awal, Iklan Moderate-High
+- Gerai D (Mall Premium Flagship): Sewa Lokasi Tinggi, 
+- Gerai E (Cloud Kitchen): Fokus App Delivery, Terkena Komisi Platform 18%
+
+Data laba/rugi harian dari kelima gerai tersebut:
+https://github.com/jendralhxr/metnummatdis/blob/main/sintesis_data_donat_harian.csv
+
+Tugas:
+- plot 'jumlah penjualan vs revenue' untuk kelima gerai (30%)
+- terapkan regresi untuk melihat bentuk tren revenue dari volume penjualan (bisa linear, polynomial, eksponen, atau yang lain) (30%)
+- cari jumlah volume penjualan yang menghasilkan breakeven point (titik balik modal) untuk masing-masing berdasarkan hasil regresi tersebut (40%)
+- kumpulkan dalam python notebook (boleh export sebagai PDF)
+- bonus nilai (10%) bila juga dilampirkan dalam repositori github/gitlab pribadi
+- tenggat sampai Minggu (2026-09-20) jam 20:00 WIB, bisa melalui ketua kelas atau email ke muhammad_zulhaj.sada@upnjatim.ac.id
+- penalti keterlambatan pengumpulan adalah 5 poin per 12 jam.

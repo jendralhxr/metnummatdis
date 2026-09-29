@@ -1,4 +1,4 @@
-First Semester in Numerical Analysis with Python
+Numerical Analysis With Python
 https://people.hsc.edu/faculty-staff/blins/books/NumericalAnalysisWithPython.pdf
 Chapter 2: Solutions of equations: Root-finding
 Chapter 3: Interpolation
@@ -32,23 +32,12 @@ Chapter 3: Finite difference methods
 Chapter 6: The numerical solution of minimization problems
 
 buat presentasi (kelompok) dari chapter pilihan, dengan kriteria:
-- presentasi tidak kurang dari 16 dan lebih dari 24 slide materi utama
+- presentasi tidak lebih dari 22 slide
 (boleh ada sub-bahasan yang dikurangi/dilewati jika diperlukan/kelewat pusing)
-= durasi presentasi ~15 menit + 5 menit tanya jawab
-= slide berbahasa Inggris dan presentasi berbahasa Indonesia, atau
-= slide berbahasa Indonesia dan presentasi menggunakan Bahasa Inggris
-- di tiap slide tidak lebih dari 24 kata (termasuk caption), font minimal 18
-+ jika terdapat kutipan bahasa pemrograman, gunakan/terjemahkan ke python
+- slide berbahasa Inggris dan presentasi berbahasa Indonesia, atau
+- slide berbahasa Indonesia dan presentasi menggunakan Bahasa Inggris
+- durasi presentasi ~15 menit + 5 menit tanya jawab
+- di tiap slide tidak lebih dari 24 kata, font minimal 18
+- jika terdapat kutipan bahasa pemrograman, gunakan/terjemahkan ke python
  (jika tidak ada, dapat ditambahkan sebagai contoh ilustrasi)
-+ penilaian utama ada di 'sampainya ide/pokok bahasan'
-= export ke PPTX/ODP/PDF, upload ke github
-
------------------ tambahan dari prodi -----------
-SURVEI KEPUASAN TENGAH SEMESTER! 📣
-
-Kepada seluruh Mahasiswa/i Program Studi Sains Data UPN "Veteran" Jawa Timur,
-Kami mengundang partisipasi Anda dalam Survei Kepuasan Tengah Semester Ganjil 2025/2026. 📝
-Tujuan survei ini adalah mengevaluasi kualitas proses pembelajaran (8 minggu berjalan) sebagai bahan perbaikan berkelanjutan (continuous improvement) dan penjaminan mutu prodi. 🚀
-
-Partisipasi bersifat anonim dan suara Anda sangat penting! Mohon berikan jawaban jujur dengan skala penilaian 1–5. ⭐
-Isi survei sekarang: ➡️ bit.ly/SETPP2526
+- penilaian utama ada di 'sampainya ide/pokok bahasan'
